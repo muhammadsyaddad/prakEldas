@@ -1,0 +1,148 @@
+---
+title: "Praktikum 1 — Pengolahan Data (Data Kita)"
+format: quarto
+---
+
+Ini adalah pengolahan data untuk Percobaan 1 (Rangkaian Resistor) menggunakan data pengamatan yang ada di file `datakita.md`.
+
+Kode Python berikut membaca tabel Markdown pada `datakita.md`, mengekstrak kolom Tegangan Input, Perubahan Arus, dan Tegangan Output, lalu menghitung tabel bantu (x, y, x^2, y^2, xy), regresi linear (intercept a dan slope b), koefisien korelasi r, serta nilai resistansi eksperimen (ohm) dengan asumsi arus pada file adalah dalam mA.
+
+```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+from math import sqrt
+from pathlib import Path
+
+
+def parse_md_table(path: Path) -> pd.DataFrame:
+    """Parse the first markdown pipe table found in the file that contains
+    the header 'Tegangan Input' and return a DataFrame with columns
+    No, Vin, I, Vout.
+    """
+    text = path.read_text(encoding='utf-8')
+    lines = text.splitlines()
+
+    # find header line
+    start = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith('|') and 'Tegangan Input' in line:
+            start = i
+            break
+    if start is None:
+        raise RuntimeError(f"Tidak menemukan tabel dengan header 'Tegangan Input' di {path}")
+
+    data = []
+    # data begins two lines after header (skip alignment row)
+    for line in lines[start+2:]:
+        if not line.strip().startswith('|'):
+            break
+        # strip outer pipes and split
+        row = line.strip().strip('|')
+        cols = [c.strip() for c in row.split('|')]
+        if len(cols) < 4:
+            continue
+        # try parsing numeric values (allow comma as decimal separator)
+        try:
+            no = int(cols[0])
+            vin = float(cols[1].replace(',', '.'))
+            i_val = float(cols[2].replace(',', '.'))
+            vout = float(cols[3].replace(',', '.'))
+        except Exception:
+            continue
+        data.append({'No': no, 'Vin': vin, 'I': i_val, 'Vout': vout})
+
+    df = pd.DataFrame(data)
+    return df
+
+
+# locate datakita.md (try same directory and repo-relative)
+possible = [Path('datakita.md'), Path('praktikum_1') / 'datakita.md', Path(__file__).parent / 'datakita.md']
+path = None
+for p in possible:
+    if p and p.exists():
+        path = p
+        break
+if path is None:
+    raise FileNotFoundError('datakita.md tidak ditemukan (dicari di praktikum_1 dan direktori file ini)')
+
+df = parse_md_table(path)
+if df.empty:
+    raise RuntimeError('Tabel data kosong setelah parsing')
+
+# Heuristic: jika arus pada tabel > 1 maka diasumsikan satuan mA
+df = df.sort_values('No').reset_index(drop=True)
+df['I_mA'] = df['I']
+if df['I_mA'].max() > 1.5:
+    df['I_A'] = df['I_mA'] / 1000.0
+    current_unit = 'mA'
+else:
+    # jika nilainya kecil anggap sudah dalam A
+    df['I_A'] = df['I_mA']
+    current_unit = 'A'
+
+# gunakan X = I_A (ampere) dan Y = Vout (volt) untuk regresi sehingga slope (b)
+# bernilai V/A = Ohm
+X = df['I_A'].to_numpy()
+Y = df['Vout'].to_numpy()
+n = len(X)
+sum_x = X.sum()
+sum_y = Y.sum()
+sum_x2 = (X**2).sum()
+sum_y2 = (Y**2).sum()
+sum_xy = (X*Y).sum()
+
+den = n*sum_x2 - sum_x**2
+if abs(den) < 1e-15:
+    raise RuntimeError('Denominator untuk regresi hampir nol (data tidak valid untuk regresi linier)')
+
+# slope (b) and intercept (a) using standard formulas
+b = (n*sum_xy - sum_x*sum_y) / den
+a = (sum_y*sum_x2 - sum_x*sum_xy) / den
+
+# Pearson correlation coefficient
+r = (n*sum_xy - sum_x*sum_y) / sqrt((n*sum_x2 - sum_x**2) * (n*sum_y2 - sum_y**2))
+
+# Measured resistance (ohm) — karena X dalam A dan Y dalam V, b = V/A = ohm
+R_meas = b
+
+# optional: literature resistance used in contoh (1100 ohm); compute kesalahan literatur
+R_lit = 1100.0
+KL_percent = abs(R_meas - R_lit)/R_lit * 100
+
+# prepare table columns for display
+df_display = df.copy()
+df_display['x (A)'] = df_display['I_A']
+df_display['y (V)'] = df_display['Vout']
+df_display['x^2'] = df_display['x (A)']**2
+df_display['y^2'] = df_display['y (V)']**2
+df_display['x*y'] = df_display['x (A)'] * df_display['y (V)']
+
+print('Data yang digunakan (dibaca dari:', path, ')')
+print('\n', df_display[['No', 'Vin', 'I_mA', 'I_A', 'Vout']].to_string(index=False))
+
+print('\nTabel bantu (x dalam A, y dalam V):')
+print(df_display[['No', 'x (A)', 'y (V)', 'x^2', 'y^2', 'x*y']].to_string(index=False, float_format=lambda v: f"{v:.6f}"))
+
+print('\nΣx  =', f"{sum_x:.6f}")
+print('Σy  =', f"{sum_y:.6f}")
+print('Σx^2=', f"{sum_x2:.6f}")
+print('Σy^2=', f"{sum_y2:.6f}")
+print('Σxy =', f"{sum_xy:.6f}")
+
+print('\nHasil regresi linear (Y = a + b X)')
+print('n =', n)
+print('a (intercept) =', f"{a:.6f}")
+print('b (slope)     =', f"{b:.6f}  (V/A = Ohm)")
+print('Koefisien korelasi r =', f"{r:.6f}")
+
+print('\nNilai resistansi eksperimen: R = b =', f"{R_meas:.3f}", 'Ω')
+print('Asumsi satuan arus pada file: ', current_unit)
+
+print(f'Kesalahan literatur dibandingkan R_lit={R_lit} Ω: KL = {KL_percent:.2f}%')
+
+``` 
+
+Catatan:
+- Skrip ini berasumsi data pada kolom "Perubahan Arus" pada `datakita.md` diberikan dalam mA jika nilai arus maksimum > 1.5. Jika bukan, dianggap dalam A.
+- Jika Anda ingin menggunakan nilai R_lit yang berbeda, ubah variabel `R_lit` di atas.

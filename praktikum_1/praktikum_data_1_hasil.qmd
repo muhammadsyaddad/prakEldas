@@ -1,0 +1,62 @@
+---
+title: "Hasil Pengolahan Data — Percobaan 1 (Data Kita)"
+format: quarto
+---
+
+Berikut adalah ringkasan hasil perhitungan regresi linear yang diambil dari eksekusi skrip pada file `praktikum_1/datakita.md`.
+
+Data asli yang dipakai
+
+| No | Vin (V) | I (mA)   | I (A)        | Vout (V)  |
+|----:|:--------:|:---------:|:------------:|:----------:|
+|  1 |    0     | 0.000000  | 0.000000     | 0.000000  |
+|  2 |    1     | 0.967742  | 0.000967742  | 0.354839  |
+|  3 |    2     | 1.935480  | 0.001935480  | 0.709677  |
+|  4 |    3     | 2.903230  | 0.002903230  | 1.064520  |
+|  5 |    4     | 3.870970  | 0.003870970  | 1.419350  |
+|  6 |    5     | 4.838710  | 0.004838710  | 1.774190  |
+|  7 |    6     | 5.806450  | 0.005806450  | 2.129030  |
+|  8 |    7     | 6.774190  | 0.006774190  | 2.483870  |
+|  9 |    8     | 7.741940  | 0.007741940  | 2.838710  |
+| 10 |    9     | 8.709680  | 0.008709680  | 3.193550  |
+| 11 |   10     | 9.677420  | 0.009677420  | 3.548390  |
+
+Tabel bantu (x dalam A, y dalam V)
+
+| No | x (A)      | y (V)     | x^2         | y^2        | x*y       |
+|----:|:----------:|:---------:|:-----------:|:----------:|:---------:|
+|  1 | 0.000000   | 0.000000  | 0.000000    | 0.000000   | 0.000000  |
+|  2 | 0.000967742| 0.354839  | 0.000001    | 0.125911   | 0.000343  |
+|  3 | 0.001935480| 0.709677  | 0.000004    | 0.503641   | 0.001374  |
+|  4 | 0.002903230| 1.064520  | 0.000008    | 1.133203   | 0.003091  |
+|  5 | 0.003870970| 1.419350  | 0.000015    | 2.014554   | 0.005494  |
+|  6 | 0.004838710| 1.774190  | 0.000023    | 3.147750   | 0.008585  |
+|  7 | 0.005806450| 2.129030  | 0.000034    | 4.532769   | 0.012362  |
+|  8 | 0.006774190| 2.483870  | 0.000046    | 6.169610   | 0.016826  |
+|  9 | 0.007741940| 2.838710  | 0.000060    | 8.058274   | 0.021977  |
+| 10 | 0.008709680| 3.193550  | 0.000076    |10.198762   | 0.027815  |
+| 11 | 0.009677420| 3.548390  | 0.000094    |12.591072   | 0.034339  |
+
+Jumlah dan statistik
+
+- Σx  = 0.053226 (A)
+- Σy  = 19.516126 (V)
+- Σx^2 = 0.000361
+- Σy^2 = 48.475546
+- Σxy = 0.132206
+
+Hasil regresi linear (Y = a + b X)
+
+- n = 11
+- a (intercept) = -0.000001 V
+- b (slope) = 366.666741 V/A (diinterpretasikan sebagai resistansi R = 366.667 Ω)
+- Koefisien korelasi r = 1.000000 (sangat linear)
+
+Kesalahan literatur (dibandingkan R_lit = 1100 Ω): KL = 66.666660 %
+
+Catatan:
+
+- Angka di atas adalah hasil yang diperoleh dari eksekusi skrip Python (`praktikum_1/praktikum_data_1.qmd`).
+- Skrip mengasumsikan nilai arus pada `datakita.md` berupa mA (dikonversi ke A untuk mendapatkan R dalam Ω).
+
+Jika ingin saya masukkan file ini ke dalam praktikum_contoh_1.qmd atau membuat penjelasan/kesimpulan tertulis tambahan, beri tahu langkah berikutnya.
