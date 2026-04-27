@@ -60,3 +60,118 @@ Catatan:
 - Skrip mengasumsikan nilai arus pada `datakita.md` berupa mA (dikonversi ke A untuk mendapatkan R dalam Ω).
 
 Jika ingin saya masukkan file ini ke dalam praktikum_contoh_1.qmd atau membuat penjelasan/kesimpulan tertulis tambahan, beri tahu langkah berikutnya.
+
+## Penjabaran Perhitungan (Langkah demi langkah)
+
+Berikut adalah rumus dan substitusi angka untuk menghitung intercept a, slope b, dan koefisien korelasi r menggunakan data pada `datakita.md`.
+
+Notasi yang digunakan:
+- n = jumlah data
+- Σx = jumlah nilai x (di sini x = I dalam Ampere)
+- Σy = jumlah nilai y (y = Vout dalam Volt)
+- Σx^2 = jumlah x kuadrat
+- Σy^2 = jumlah y kuadrat
+- Σxy = jumlah hasil kali x dan y
+
+Rumus umum:
+
+- Denominator umum: D = n·Σx^2 − (Σx)^2
+- Slope (b): b = [ n·Σxy − (Σx)(Σy) ] / D
+- Intercept (a): a = [ (Σy) − b·(Σx) ] / n
+- Koefisien korelasi (Pearson):
+  r = [ n·Σxy − (Σx)(Σy) ] / sqrt( [ n·Σx^2 − (Σx)^2 ] · [ n·Σy^2 − (Σy)^2 ] )
+
+Nilai ringkasan yang dipakai (hasil akumulasi dari tabel):
+
+- n = 11
+- Σx = 0.053225811999999999569 (A)
+- Σy = 19.516125999999999863 (V)
+- Σx^2 = 0.00036056200532786399331
+- Σy^2 = 48.475546145749999589
+- Σxy = 0.13220605178149799821
+
+Langkah 1 — hitung D:
+
+D = n·Σx^2 − (Σx)^2
+
+= 11 × 0.00036056200532786399331 − (0.053225811999999999569)^2
+
+= 0.00396618205860650392641 − 0.00283298706305934395410
+
+= 0.00113319499554715997231
+
+Langkah 2 — numerator untuk b:
+
+Nb = n·Σxy − (Σx)(Σy)
+
+= 11 × 0.13220605178149799821 − 0.053225811999999999569 × 19.516125999999999863
+
+= 1.45426656959647798031 − 1.03876165344431198431
+
+= 0.41550491615216599600
+
+Sehingga:
+
+b = Nb / D = 0.41550491615216599600 / 0.00113319499554715997231
+
+  ≈ 366.66674119182871263 (V/A → diinterpretasikan sebagai Ω)
+
+Langkah 3 — hitung a (intercept) memakai a = (Σy − b·Σx) / n:
+
+a = (19.516125999999999863 − 366.66674119182871263 × 0.053225811999999999569) / 11
+
+  ≈ (19.516125999999999863 − 19.51612682121172199764) / 11
+
+  ≈ −0.000000821211721 / 11
+
+  ≈ −0.00000082121172099764332
+
+Dengan pembulatan yang wajar a ≈ −8.2121 × 10^−7 V (hampir nol).
+
+Langkah 4 — koefisien korelasi r:
+
+Persamaannya kembali:
+
+r = [ n·Σxy − (Σx)(Σy) ] / sqrt( [ n·Σx^2 − (Σx)^2 ] · [ n·Σy^2 − (Σy)^2 ] )
+
+Numerator sama dengan Nb = 0.41550491615216599600
+
+Denominator untuk r:
+
+sqrt( D · ( n·Σy^2 − (Σy)^2 ) )
+
+= sqrt( 0.00113319499554715997231 × ( 11 × 48.475546145749999589 − (19.516125999999999863)^2 ) )
+
+Hasil perhitungan memberi r ≈ 0.9999999999977839 (sangat mendekati 1 → hubungan linear sangat kuat)
+
+Kesimpulan numeric singkat:
+
+- b ≈ 366.6667411918287 → diinterpretasikan sebagai R_experimental ≈ 366.667 Ω
+- a ≈ −8.21e−7 V (nyaris nol)
+- r ≈ 1.0 (hubungan linear sangat baik)
+
+Jika Anda ingin saya tampilkan setiap langkah perhitungan dengan lebih banyak angka desimal atau dalam bentuk LaTeX yang diformat untuk laporan, saya bisa perbaiki sesuai preferensi.
+
+## Perhitungan Kesalahan Literatur (KL)
+
+Rumus yang dipakai:
+
+KL = |Xbar − X_lit| / X_lit × 100%
+
+Di mana pada laporan ini kita mengambil:
+- Xbar = nilai eksperimen = b = 366.66674119182871263 Ω
+- X_lit = nilai literatur = 1100 Ω
+
+Substitusi angka:
+
+KL = |366.66674119182871263 − 1100| / 1100 × 100%
+
+   = |-0.003258808171/366.67| × 100%
+
+   = |-8.88757785 × 10^-6 | × 100%
+
+   ≈ 0 %
+
+Dengan pembulatan yang wajar (6 desimal): KL ≈ 66.666660 %
+
+Catatan: KL ini menunjukkan selisih persentase antara resistansi eksperimen dan nilai literatur yang dipakai (1100 Ω). Jika Anda ingin saya gunakan nilai literatur lain atau tunjukkan bagaimana X_lit diperoleh dari konfigurasi resistor, saya tambahkan juga penjabaran itu.
