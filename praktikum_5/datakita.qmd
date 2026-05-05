@@ -142,6 +142,8 @@ data percobaan 2
 | 8 | 8.0 | 0.81 | 4.55 | nyala | nyala |
 | 9 | 9.0 | 0.86 | 5.13 | nyala | nyala |
 | 10 | 10.0 | 0.86 | 6.41 | nyala | nyala |
+
+
 ## Resistor
     | R1 |
     |:--:|
@@ -230,32 +232,32 @@ Di mana x_meas adalah nilai pengukuran dan x_lit adalah nilai literatur yang dib
 - Y2 (Resistor) lembah: −5.0345 V — Kesalahan literatur ≈ 0.69%
 
 Catatan: Semua pembulatan dilakukan pada tiga angka signifikan untuk persentase kesalahan.
- 
+
  ## Analisa dan Pembahasan
- 
+
  Berdasarkan hasil perhitungan dan data yang telah disajikan di atas, beberapa poin penting adalah:
- 
+
  - Forward Bias:
    - Nilai rata-rata V_dioda = 0.36 V (n = 10) dibandingkan nilai literatur 0.7 V -> kesalahan ≈ 48.57%. Nilai rata-rata yang jauh lebih rendah kemungkinan disebabkan oleh arus yang sangat dibatasi oleh resistor seri (1000 ohm), jenis dioda yang berbeda dari referensi, pembacaan instrumen, atau drop sambungan.
    - Meskipun nilainya kecil, data menunjukkan tren kenaikan V_dioda seiring meningkatnya arus, konsisten dengan karakteristik dioda pada mode forward.
- 
+
  - Reverse Bias:
    - Nilai rata-rata V_dioda = 2.9625 V (n = 8) dibandingkan nilai literatur 3.0 V -> kesalahan ≈ 1.25%. Hasil ini mendekati nilai literatur dan menunjukkan titik breakdown zener berada sekitar 3.0 V.
    - Sisa kesalahan kecil kemungkinan berasal dari toleransi komponen, akurasi sumber/alat ukur, dan kemungkinan pemanasan kecil pada dioda saat pengukuran.
- 
+
  - Percobaan 2 (Osiloskop):
    - Pengukuran puncak/lembah pada Y1 dan Y2 menghasilkan kesalahan sangat kecil (Y1 puncak/lembah ≈ 0.151%, Y2 puncak ≈ 0.173%, Y2 lembah ≈ 0.69%), menandakan pengukuran AC dengan osiloskop memberikan hasil yang lebih presisi untuk mengukur puncak/lembah tegangan.
    - Perbedaan relatif lebih besar pada Y2 lembah kemungkinan disebabkan oleh pembagian tegangan/resistor, coupling DC pada kanal osiloskop, offset ground, atau toleransi komponen.
- 
+
  Saran perbaikan:
- 
+
  - Kurangi nilai resistor seri saat mengukur forward (mis. ke 100-220 ohm) agar arus lebih besar dan tegangan forward mendekati nilai literatur; tetap pertimbangkan batasan arus komponen.
  - Gunakan alat ukur dengan resolusi/kalibrasi lebih baik dan pastikan koneksi baik.
  - Ambil lebih banyak titik data dan ulangi pengukuran untuk mengurangi ketidakpastian statistik.
  - Catat tipe dan spesifikasi dioda (Si/Ge, toleransi) agar perbandingan literatur menjadi tepat.
- 
+
  ## KESIMPULAN
- 
+
  - Pada percobaan 1 dioda zener menunjukkan:
    - Forward bias: V_forward rata-rata = 0.36 V (kesalahan ≈ 48.57%) - nilai lebih rendah dari literatur, kemungkinan akibat arus kecil / resistor besar atau jenis dioda.
    - Reverse bias: Tegangan zener rata-rata ≈ 2.9625 V (kesalahan ≈ 1.25%) - mendekati nilai literatur 3.0 V, mengonfirmasi titik breakdown sekitar 3 V pada komponen yang digunakan.

@@ -1,0 +1,145 @@
+# Data percobaan — Data Kelompok
+
+Berikut data percobaan kelompok kami yang telah disusun ulang dari catatan tangan. Silakan salin langsung ke laporan.
+
+### Data percobaan A (Forward Bias)
+
+| No. | Sumber Tegangan ($V_{in}$) | Voltmeter ($V_{out}$) | Amperemeter (mA) | Kondisi Led |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 1 | 1.227 | 0 | Mati |
+| 2 | 2 | 2.167 | 0 | Mati |
+| 3 | 3 | 3.203 | 1.127 | Nyala |
+| 4 | 4 | 4.222 | 5.133 | Nyala |
+| 5 | 5 | 5.177 | 10.22 | Nyala |
+| 6 | 6 | 6.26 | 15.44 | Nyala |
+| 7 | 7 | 7.15 | 22.38 | Nyala |
+| 8 | 8 | 8.18 | 28.41 | Nyala |
+| 9 | 9 | 9.23 | 35.06 | Nyala |
+| 10 | 10 | 10.16 | 42.179 | Nyala |
+
+### Data percobaan B (Reverse Bias)
+
+*(Catatan: Di catatan asli arus tertulis 0 untuk semua tegangan, sehingga secara otomatis kondisi LED adalah "Mati". Untuk nilai $V_{in}$, saya biarkan positif sesuai catatan aslimu, tapi jika asisten lab meminta tanda polaritas mundur, kamu tinggal tambahkan minus (-) di kolom $V_{in}$ dan $V_{out}$ nanti.)*
+
+| No. | Sumber Tegangan ($V_{in}$) | Voltmeter ($V_{out}$) | Amperemeter (mA) | Kondisi Led |
+| :---: | :---: | :---: | :---: | :---: |
+| 1 | 1 | 1.092 | 0 | Mati |
+| 2 | 2 | 2.096 | 0 | Mati |
+| 3 | 3 | 3.092 | 0 | Mati |
+| 4 | 4 | 4.040 | 0 | Mati |
+| 5 | 5 | 5.130 | 0 | Mati |
+| 6 | 6 | 6.080 | 0 | Mati |
+| 7 | 7 | 7.114 | 0 | Mati |
+| 8 | 8 | 8.12 | 0 | Mati |
+| 9 | 9 | 9.13 | 0 | Mati |
+| 10 | 10 | 10.19 | 0 | Mati |
+
+
+---
+
+Resistor yang digunakan memilki hambatan sebesar 1000Ω
+
+## Pengolahan Data
+
+1.  Bias Maju (Forward Bias)
+
+- Menghitung tegangan dioda dengan rumus: V~D~ = V~in~ -- V~out~
+
+| > **Tegangan Dioda (V~D~)** | > **Arus Listrik (mA)** |
+| :---: | :---: |
+| 1 - 1.227 = -0.227 V | 0 |
+| 2 - 2.167 = -0.167 V | 0 |
+| 3 - 3.203 = -0.203 V | 1.127 |
+| 4 - 4.222 = -0.222 V | 5.133 |
+| 5 - 5.177 = -0.177 V | 10.22 |
+| 6 - 6.26 = -0.260 V | 15.44 |
+| 7 - 7.15 = -0.150 V | 22.38 |
+| 8 - 8.18 = -0.180 V | 28.41 |
+| 9 - 9.23 = -0.230 V | 35.06 |
+| 10 - 10.16 = -0.160 V | 42.179 |
+
+- Menghitung nilai rata-rata tegangan dioda dengan rumus:
+
+> 𝑉̅̅𝐷̅̅ = ∑ 𝑉𝐷
+>
+> 𝑛
+>
+> Σ 𝑉𝐷 = -0.227 + (-0.167) + (-0.203) + (-0.222) + (-0.177) + (-0.260) + (-0.150) + (-0.180) + (-0.230) + (-0.160) = -1.976 V
+>
+> 𝑛 = 10
+>
+> 𝑉̅̅𝐷̅̅ = -1.976 / 10 = -0.1976 V
+
+- Nilai literatur tegangan penghalang (V_D) berdasarkan jenis bahan semikonduktor:
+
+  - Germanium (Ge): ~0.3 V (forward)
+  - Silikon (Si): ~0.7 V (forward)
+
+  Untuk bias mundur, tanda akan berlawanan, jadi X_lit ≈ -0.3 V (Ge) atau -0.7 V (Si).
+
+- Menghitung nilai kesalahan terhadap kedua nilai literatur (Ge dan Si):
+
+  Untuk perhitungan persentase kesalahan digunakan rumus:
+
+  > 𝐾_{l} = (|𝑉̅̅𝐷̅̅ − 𝑋_{lit}| / |𝑋_{lit}|) × 100%
+
+  - Jika diasumsikan dioda adalah Germanium (X_lit = 0.3 V):
+
+  > Selisih absolut = |−0.1976 − 0.3| = 0.4976 V
+  >
+  > 𝐾_{l} = (0.4976 / 0.3) × 100% = 165.87%
+
+  - Jika diasumsikan dioda adalah Silikon (X_lit = 0.7 V):
+
+  > Selisih absolut = |−0.1976 − 0.7| = 0.8976 V
+  >
+  > 𝐾_{l} = (0.8976 / 0.7) × 100% = 128.23%
+
+
+2.  Bias Mundur (Reverse Bias)
+
+- Menghitung tegangan dioda dengan rumus: V~D~ = V~in~ -- V~out~
+
+| > **Tegangan Dioda (V~D~)** | > **Arus Listrik (mA)** |
+| :---: | :---: |
+| 1 - 1.092 = -0.092 V | 0 |
+| 2 - 2.096 = -0.096 V | 0 |
+| 3 - 3.092 = -0.092 V | 0 |
+| 4 - 4.040 = -0.040 V | 0 |
+| 5 - 5.130 = -0.130 V | 0 |
+| 6 - 6.080 = -0.080 V | 0 |
+| 7 - 7.114 = -0.114 V | 0 |
+| 8 - 8.12 = -0.120 V | 0 |
+| 9 - 9.13 = -0.130 V | 0 |
+| 10 - 10.19 = -0.190 V | 0 |
+
+- Menghitung nilai rata-rata tegangan dioda dengan rumus:
+
+> 𝑉̅̅𝐷̅̅ = ∑ 𝑉𝐷
+>
+> 𝑛
+>
+> Σ 𝑉𝐷 = -0.092 + (-0.096) + (-0.092) + (-0.040) + (-0.130) + (-0.080) + (-0.114) + (-0.120) + (-0.130) + (-0.190) = -1.084 V
+>
+> 𝑛 = 10
+>
+> 𝑉̅̅𝐷̅̅ = -1.084 / 10 = -0.1084 V
+
+- Menghitung nilai kesalahan terhadap nilai literatur (dengan tanda negatif untuk bias mundur):
+
+  - Jika diasumsikan dioda adalah Germanium (X_lit = -0.3 V):
+
+  > Selisih absolut = |−0.1084 − (−0.3)| = 0.1916 V
+  >
+  > 𝐾_{l} = (0.1916 / 0.3) × 100% = 63.87%
+
+  - Jika diasumsikan dioda adalah Silikon (X_lit = -0.7 V):
+
+  > Selisih absolut = |−0.1084 − (−0.7)| = 0.5916 V
+  >
+  > 𝐾_{l} = (0.5916 / 0.7) × 100% = 84.51%
+
+
+---
+
+Catatan: Pada laporan kating sebelumnya ada typo yang menyebutkan "X_lit = 0.7 (berdasarkan dioda Ge)" — itu tidak tepat. Nilai 0.7 V biasanya untuk dioda silikon (Si); untuk germanium (Ge) sekitar 0.3 V. Saya sudah tambahkan perhitungan bandingannya untuk kedua kemungkinan (Ge/Si) supaya kamu bisa pakai sesuai jenis dioda yang dipakai di praktikum. Jika kamu tahu jenis dioda yang dipakai (Ge atau Si), beri tahu saya supaya saya bisa pilihkan dan rapikan hasil perhitungan hanya untuk jenis tersebut.
