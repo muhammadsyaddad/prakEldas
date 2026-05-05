@@ -41,7 +41,6 @@
 +-------+----------------------+---------------------+
 
 
-
 ## Percobaan 2 Rangkaian Thevenin Mengukur Rth
 
 > **Hambatan Tetap (2K)**

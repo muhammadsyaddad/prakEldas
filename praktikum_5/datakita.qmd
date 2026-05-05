@@ -1,0 +1,263 @@
+Data Percobaan 1
+
+## Resistor
+    | R1 |
+    |:--:|
+    | 1000𝛺|
+
+
+## Forward Bias (0 V sampai 10 V)
+
+| No | Tegangan Input (V) | Arus (mA) | V dioda (V) |
+|---:|:------------------:|:---------:|:-----------:|
+|  1 |         0          |    0.00   |     0.00    |
+|  2 |         1          |    0.71   |     0.29    |
+|  3 |         2          |    1.68   |     0.32    |
+|  4 |         3          |    2.66   |     0.34    |
+|  5 |         4          |    3.65   |     0.35    |
+|  6 |         5          |    4.64*  |     0.36*   |
+|  7 |         6          |    5.63   |     0.37    |
+|  8 |         7          |    6.62   |     0.38    |
+|  9 |         8          |    7.61   |     0.39    |
+| 10 |         9          |    8.60   |     0.40    |
+| 11 |        10          |    9.59   |     0.40    |
+
+## Reverse Bias (0 V sampai 10 V)
+
+| No | Tegangan Input (V) | Arus (mA) | V dioda (V) |
+|---:|:------------------:|:---------:|:-----------:|
+|  1 |         0          |    0.00   |     0.00    |
+|  2 |         1          |    0.00   |     1.00    |
+|  3 |         2          |    0.00   |     2.00    |
+|  4 |         3          |    0.13   |     2.87    |
+|  5 |         4          |    1.07   |     2.93    |
+|  6 |         5          |    2.05   |     2.95    |
+|  7 |         6          |    3.03   |     2.97    |
+|  8 |         7          |    4.02   |     2.98    |
+|  9 |         8          |    5.01   |     2.99    |
+| 10 |         9          |    6.00   |     3.00    |
+| 11 |        10          |    6.99   |     3.01    |
+
+
+---
+## Perhitungan
+---
+### Forward Bias
+Jumlah data: 10 (hanya data dengan arus > 0; input 1–10 V)
+Jumlah (∑ V_dioda): 3.60 V
+Rata-rata V_dioda: 0.36000 V
+Nilai literatur (Xlit): 0.7 V
+Kesalahan Literatur (|V̅ - Xlit|/Xlit × 100%): 48.57 %
+
+### Reverse Bias
+Jumlah data: 8 (hanya data saat dioda sudah tembus; input 3–10 V)
+Jumlah (∑ V_dioda): 23.70 V
+Rata-rata V_dioda: 2.96250 V
+Nilai literatur (Xlit): 3.0 V
+Kesalahan Literatur (|V̅ - Xlit|/Xlit × 100%): 1.25 %
+
+---
+
+### Uraian Langkah-langkah
+
+**Forward Bias**
+
+Data V_dioda (V) dari tabel — hanya data dengan arus > 0 (input 1–10 V):
+
+`0.29, 0.32, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.40, 0.40`
+
+Langkah perhitungan:
+
+1. Jumlah data: n = 10
+2. Jumlah (∑ V_dioda):
+
+   0.29 + 0.32 + 0.34 + 0.35 + 0.36 + 0.37 + 0.38 + 0.39 + 0.40 + 0.40 = 3.60 V
+
+3. Rata-rata V_dioda:
+
+   V̅ = ∑ / n = 3.60 / 10 = 0.36 V
+
+4. Kesalahan literatur (Xlit = 0.7 V):
+
+   |0.36 − 0.7| = 0.34
+
+   0.34 / 0.7 = 0.485714...
+
+   0.485714... × 100% = 48.5714% ≈ 48.57%
+
+Ringkasan forward:
+
+- ∑ V_dioda = 3.60 V
+- V̅ = 0.36 V
+- Kesalahan literatur ≈ 48.57%
+
+**Reverse Bias**
+
+Data V_dioda (V) dari tabel — hanya data saat dioda sudah tembus (input 3–10 V):
+
+`2.87, 2.93, 2.95, 2.97, 2.98, 2.99, 3.00, 3.01`
+
+Langkah perhitungan:
+
+1. Jumlah data: n = 8
+2. Jumlah (∑ V_dioda):
+
+   2.87 + 2.93 + 2.95 + 2.97 + 2.98 + 2.99 + 3.00 + 3.01 = 23.70 V
+
+3. Rata-rata V_dioda:
+
+   V̅ = ∑ / n = 23.70 / 8 = 2.9625 V
+
+4. Kesalahan literatur (Xlit = 3.0 V):
+
+   |2.9625 − 3.0| = 0.0375
+
+   0.0375 / 3.0 = 0.0125
+
+   0.0125 × 100% = 1.25%
+
+Ringkasan reverse:
+
+- ∑ V_dioda = 23.70 V
+- V̅ = 2.9625 V
+- Kesalahan literatur ≈ 1.25%
+
+Catatan:
+
+- Nilai bertanda `*` (mis. `4.64*`, `0.36*`) diproses sebagai angka biasa (asterisk diabaikan) saat menghitung.
+- Semua pembulatan pada laporan dilakukan sesuai format ringkasan (rata-rata 5 desimal dipotong/dibulatkan sesuai tampilan).
+
+
+data percobaan 2
+
+| No | Volt Input (V) | Vrms D (V) | Vrms R (V) | Ket. D | Ket. R |
+|---:|:--------------:|:----------:|:----------:|:------:|:------:|
+| 1 | 1.0 | 0.06 | 0.02 | mati | mati |
+| 2 | 2.0 | 0.35 | 0.03 | mati | nyala |
+| 3 | 3.0 | 0.55 | 0.38 | Redup | nyala |
+| 4 | 4.0 | 0.55 | 0.91 | nyala | nyala |
+| 5 | 5.0 | 0.78 | 0.93 | nyala | nyala |
+| 6 | 6.0 | 0.79 | 1.83 | nyala | nyala |
+| 7 | 7.0 | 0.80 | 2.57 | nyala | nyala |
+| 8 | 8.0 | 0.81 | 4.55 | nyala | nyala |
+| 9 | 9.0 | 0.86 | 5.13 | nyala | nyala |
+| 10 | 10.0 | 0.86 | 6.41 | nyala | nyala |
+## Resistor
+    | R1 |
+    |:--:|
+    | 82𝛺|
+
+
+| Komponen | Y1 (V) | Y2 (V) |
+|---:|:-----:|:-----:|
+| Puncak | 9,9849 | 9,4163 |
+| Lembah | -9,9849 | -5,0345 |
+
+---
+## Perhitungan Percobaan 2
+---
+
+### Data pengukuran
+
+- Y1 (Dioda) puncak: 9.9849 V
+- Y1 (Dioda) lembah: -9.9849 V
+- Y2 (Resistor) puncak: 9.4163 V
+- Y2 (Resistor) lembah: -5.0345 V
+
+### Metode
+
+Kesalahan literatur dihitung dengan rumus:
+
+|Kesalahan| = |x_meas - x_lit| / |x_lit| × 100%
+
+Di mana x_meas adalah nilai pengukuran dan x_lit adalah nilai literatur yang dibandingkan.
+
+### Perhitungan
+
+1) Y1 (Dioda) — Puncak
+
+   x_meas = 9.9849 V
+
+   x_lit = 10 V
+
+   |x_meas - x_lit| = |9.9849 − 10| = 0.0151 V
+
+   0.0151 / 10 = 0.00151
+
+   0.00151 × 100% = 0.151% → Kesalahan ≈ 0.151%
+
+2) Y1 (Dioda) — Lembah
+
+   x_meas = −9.9849 V
+
+   x_lit = −10 V
+
+   |x_meas - x_lit| = |−9.9849 − (−10)| = 0.0151 V
+
+   0.0151 / 10 = 0.00151
+
+   0.00151 × 100% = 0.151% → Kesalahan ≈ 0.151%
+
+3) Y2 (Resistor) — Puncak
+
+   x_meas = 9.4163 V
+
+   x_lit = 9.4 V
+
+   |x_meas - x_lit| = |9.4163 − 9.4| = 0.0163 V
+
+   0.0163 / 9.4 = 0.001734042553...
+
+   0.001734... × 100% ≈ 0.1734% → Kesalahan ≈ 0.173%
+
+4) Y2 (Resistor) — Lembah
+
+   x_meas = −5.0345 V
+
+   x_lit = −5 V
+
+   |x_meas - x_lit| = |−5.0345 − (−5)| = 0.0345 V
+
+   0.0345 / 5 = 0.0069
+
+   0.0069 × 100% = 0.69% → Kesalahan ≈ 0.69%
+
+### Ringkasan Percobaan 2
+
+- Y1 (Dioda) puncak: 9.9849 V — Kesalahan literatur ≈ 0.151%
+- Y1 (Dioda) lembah: −9.9849 V — Kesalahan literatur ≈ 0.151%
+- Y2 (Resistor) puncak: 9.4163 V — Kesalahan literatur ≈ 0.173%
+- Y2 (Resistor) lembah: −5.0345 V — Kesalahan literatur ≈ 0.69%
+
+Catatan: Semua pembulatan dilakukan pada tiga angka signifikan untuk persentase kesalahan.
+ 
+ ## Analisa dan Pembahasan
+ 
+ Berdasarkan hasil perhitungan dan data yang telah disajikan di atas, beberapa poin penting adalah:
+ 
+ - Forward Bias:
+   - Nilai rata-rata V_dioda = 0.36 V (n = 10) dibandingkan nilai literatur 0.7 V -> kesalahan ≈ 48.57%. Nilai rata-rata yang jauh lebih rendah kemungkinan disebabkan oleh arus yang sangat dibatasi oleh resistor seri (1000 ohm), jenis dioda yang berbeda dari referensi, pembacaan instrumen, atau drop sambungan.
+   - Meskipun nilainya kecil, data menunjukkan tren kenaikan V_dioda seiring meningkatnya arus, konsisten dengan karakteristik dioda pada mode forward.
+ 
+ - Reverse Bias:
+   - Nilai rata-rata V_dioda = 2.9625 V (n = 8) dibandingkan nilai literatur 3.0 V -> kesalahan ≈ 1.25%. Hasil ini mendekati nilai literatur dan menunjukkan titik breakdown zener berada sekitar 3.0 V.
+   - Sisa kesalahan kecil kemungkinan berasal dari toleransi komponen, akurasi sumber/alat ukur, dan kemungkinan pemanasan kecil pada dioda saat pengukuran.
+ 
+ - Percobaan 2 (Osiloskop):
+   - Pengukuran puncak/lembah pada Y1 dan Y2 menghasilkan kesalahan sangat kecil (Y1 puncak/lembah ≈ 0.151%, Y2 puncak ≈ 0.173%, Y2 lembah ≈ 0.69%), menandakan pengukuran AC dengan osiloskop memberikan hasil yang lebih presisi untuk mengukur puncak/lembah tegangan.
+   - Perbedaan relatif lebih besar pada Y2 lembah kemungkinan disebabkan oleh pembagian tegangan/resistor, coupling DC pada kanal osiloskop, offset ground, atau toleransi komponen.
+ 
+ Saran perbaikan:
+ 
+ - Kurangi nilai resistor seri saat mengukur forward (mis. ke 100-220 ohm) agar arus lebih besar dan tegangan forward mendekati nilai literatur; tetap pertimbangkan batasan arus komponen.
+ - Gunakan alat ukur dengan resolusi/kalibrasi lebih baik dan pastikan koneksi baik.
+ - Ambil lebih banyak titik data dan ulangi pengukuran untuk mengurangi ketidakpastian statistik.
+ - Catat tipe dan spesifikasi dioda (Si/Ge, toleransi) agar perbandingan literatur menjadi tepat.
+ 
+ ## KESIMPULAN
+ 
+ - Pada percobaan 1 dioda zener menunjukkan:
+   - Forward bias: V_forward rata-rata = 0.36 V (kesalahan ≈ 48.57%) - nilai lebih rendah dari literatur, kemungkinan akibat arus kecil / resistor besar atau jenis dioda.
+   - Reverse bias: Tegangan zener rata-rata ≈ 2.9625 V (kesalahan ≈ 1.25%) - mendekati nilai literatur 3.0 V, mengonfirmasi titik breakdown sekitar 3 V pada komponen yang digunakan.
+ - Pada percobaan 2 (osiloskop) hasil puncak dan lembah menunjukkan kesesuaian yang baik dengan nilai literatur (kesalahan <<1% pada sebagian besar pengukuran), sehingga osiloskop efektif untuk karakterisasi sinyal AC.
+ - Untuk meningkatkan akurasi pengukuran forward bias, disarankan menurunkan hambatan seri, memperbaiki teknik pengukuran, dan menggunakan alat yang terkalibrasi.
