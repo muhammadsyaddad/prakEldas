@@ -1,0 +1,331 @@
+> ![](media/media/image1.png){width="1.5682939632545931in" height="1.6179166666666667in"}
+
+# UNIVERSITAS ISLAM NEGERI SYARIF HIDAYATULLAH JAKARTA
+
+> **LAPORAN PRAKTIKUM ELEKTRONIKA DASAR**
+
++---------------------+-------------------------+----------------+
+| > Nama              | > : Amanda Putri        | 11220970000015 |
++:====================+:========================+===============:+
+|                     | > Hakim Afif Putra      | 11220970000031 |
++---------------------+-------------------------+----------------+
+|                     | > Kintan Alifia         | 11220970000025 |
++---------------------+-------------------------+----------------+
+| > Nomor Kelompok    | > : 11                  |                |
++---------------------+-------------------------+----------------+
+| > Fakultas          | > : Sains dan Teknologi |                |
++---------------------+-------------------------+----------------+
+| > Jurusan           | > : Fisika              |                |
++---------------------+-------------------------+----------------+
+| > Nomor Percobaan   | > : Percobaan 4         |                |
++---------------------+-------------------------+----------------+
+| > Nama percobaan    | > : Karakteristik Dioda |                |
++---------------------+-------------------------+----------------+
+| > Tanggal Percobaan | > : 2 Mei 2024          |                |
++---------------------+-------------------------+----------------+
+| > Minggu ke-        | > : 4                   |                |
++---------------------+-------------------------+----------------+
+| > Asisten           | > : -                   |                |
++---------------------+-------------------------+----------------+
+
+# TUJUAN PRAKTIKUM
+
+1.  Menentukan hubungan antara tegangan dioda dengan arus yang dihasilkan pada suatu rangkaian.
+
+2.  Mempelajari karakteristik dioda pada suatu rangkaian dengan Osiloskop.
+
+# DASAR TEORI
+
+> Dioda adalah komponen elektronika aktif yang terbuat dari bahan semikonduktor. Fungsinya adalah untuk menghantarkan arus listrik ke satu arah dan menghambat arus dari arah sebaliknya,menjadikannya penting sebagai penyearah dalam rangkaian elektronika. Biasanya, dioda memiliki dua elektroda: anoda (+) dan katoda (-), dan prinsip kerjanya didasarkan pada teknologipertemuan p-n semikonduktor, yang memungkinkannya mengalirkan arus dari tipe-p (anoda) ketipe-n (katoda) tetapi tidak sebaliknya.
+>
+> Berdasarkan fungsinya, dioda dapat dibagi menjadi beberapa jenis:
+
+- Dioda penyearah (dioda biasa atau dioda jembatan) mengubah arus AC menjadi arus DC.
+
+- Dioda Zener berfungsi sebagai pengaman rangkaian dan penstabil tegangan.
+
+- Dioda LED berperan sebagai lampu indikator atau penerangan.
+
+- Dioda foto berfungsi sebagai sensor cahaya.
+
+- ![](media/media/image2.jpeg){width="2.575in" height="1.9284722222222221in"}Dioda Schottky bertindak sebagai pengendali.
+
+![](media/media/image3.jpeg){width="2.790510717410324in" height="1.0999989063867017in"}
+
+> Gambar 1. Dioda
+>
+> Gambar 2. Jenis Dioda
+>
+> Dioda semikonduktor terbentuk dengan menghubungkan semikonduktor tipe-p dan tipe-n. Saatterjadi sambungan antara bahan semikonduktor tipe-p dan tipe-n, hole pada bahan tipe-p dan elektron pada bahan tipe-n cenderung untuk berikatan. Ini menyebabkan hole dan elektron yangberikatan tersebut saling meniadakan, menciptakan daerah kosong dari pembawa muatan di sekitar sambungan yang disebut daerah pengosongan (depletion region).
+>
+> ![Image result for the depletion layer of pn junction diode has](media/media/image4.jpeg){width="3.1149857830271217in" height="1.9968744531933509in"}
+>
+> Gambar 3. Layar Penipisan Dioda
+>
+> Pada sisi tipe-p, hanya ion-ion akseptor yang bermuatan negatif yang tersisa, sementara pada sisi tipe-n, hanya ion-ion donor yang bermuatan positif yang tersisa. Namun, proses ini tidak berlangsung terus-menerus karena potensial dari ion-ion positif dan negatif ini menghalangi interaksi selanjutnya. Potensial ekivalen dari daerah pengosongan ini disebut sebagai tegangan penghalang (barrier potential). Besarnya tegangan penghalang ini adalah sekitar 0,3 V untuk germanium dan sekitar 0,7 V untuk silikon.
+>
+> Bias mundur (*Reverse Bias*) adalah pemberian tegangan negatif baterai ke terminal anoda
+>
+> \(A\) dan tegangan positif ke terminal katoda (K) dari suatu dioda. Dengan kata lain, tegangan anodakatoda 𝑉𝐴−𝐾 adalah negatif (𝑉𝐴−𝐾 \<0).
+
+![](media/media/image5.jpeg){width="4.101878827646544in" height="2.2825in"}
+
+> Gambar 4. Dioda diberi Bias Mundur (Reverse Bias)
+>
+> Ketika tegangan negatif diberikan pada ujung anoda (A) yang terdiri dari bahan tipe p, hole (pembawa mayoritas) akan ditarik menuju kutub negatif baterai, menjauh dari persambungan. Di sisi lain, tegangan positif diberikan pada ujung katoda (K) yang terbuat dari bahan tipe n, sehingga elektron (pembawa mayoritas) akan tertarik menuju kutub positif baterai, juga menjauh dari persambungan. Akibatnya, daerah pengosongan di antara dua bahan semikonduktor tersebut semakin melebar, menyebabkan arus yang dihasilkan oleh pembawa mayoritas menjadi tidak ada. Namun, pembawa minoritas seperti elektron (pada bahan tipe p) dan hole (pada bahan tipe n) akan berkombinasi, menghasilkan arus jenuh mundur (reverse saturation current) atau I_S. Arus ini dikatakan jenuh karena cepat mencapai nilai maksimum tanpa dipengaruhi oleh besar
+>
+> tegangan baterai. Besar arus ini dipengaruhi oleh suhu; semakin tinggi suhu, semakin besar nilai I_S. Pada suhu ruang, I_S biasanya berada dalam skala mikroampere untuk dioda germanium dan dalam skala nanoampere untuk dioda silikon.
+>
+> Bias maju (*Forward Bias*) apabila tegangan positif baterai dihubungkan ke terminal anoda
+>
+> \(A\) dan tegangan negatifnya ke terminal katoda (K), maka dioda disebut mendapatkan bias maju (*Forward Bias*). Dengan demikian 𝑉𝐴−𝐾 adalah positif atau (𝑉𝐴−𝐾 \>0).
+
+![](media/media/image6.jpeg){width="4.260488845144357in" height="2.3125in"}
+
+> Gambar 5. Dioda diberi Bias Mundur (Reverse
+>
+> Bias)
+>
+> Dengan pemberian polaritas tegangan seperti pada gambar 2, yakni 𝑉𝐴−𝐾 positif, maka pembawa mayoritas dari bahan tipe p (hole) akan tertarik oleh kutub negatif baterai melewati persambungan dan berkombinasi dengan elektron (pembawa mayoritas bahan tipe n). Demikian juga elektronnya akan tertarik oleh kutub positif baterai untuk melewati persambungan. Oleh karena itu daerah pengosongan terlihat semakin menyempit pada saat dioda diberi bias maju. Dan arus dioda yang disebabkan oleh pembawa mayoritas akan mengalir yaitu 𝐼𝐷. Sedangkan pembawa minoritas dari bahan tipe p (elektron) dan dari bahan tipe n (hole) akan berkombinasi dan menghasilkan 𝐼𝑆. Arah 𝐼𝑆 dan 𝐼𝐷 adalah berlawanan. Namun karena 𝐼𝑆 jauh lebih kecil dari 𝐼𝐷, maka secara praktis besarnya arus yang mengalir pada dioda ditentukan oleh 𝐼𝐷.
+
+# METODOLOGI PERCOBAAN
+
+## Percobaan 1 Mengukur Tegangan dan Amperemeter
+
+1.  **Alat dan Bahan**
+
+    1.  Bread Board (Papan Roti) 1 buah
+
+    2.  Dioda 1 buah
+
+    3.  Resistor 1 buah
+
+    4.  LED 1 buah
+
+    5.  Kabel Jumper 2 buah
+
+    6.  Multimeter 1 buah
+
+## Prosedur Percobaan
+
+1.  Menyusun rangkaian seperti pada gambar dibawah.
+
+![](media/media/image7.jpeg){width="4.221984908136483in" height="2.5620833333333333in"}
+
+> Gambar 6. Rangkaian Dioda dengan Osiloskop
+
+2.  Memvariasikan tegangan input dari 0 V sampai 5 V untuk forward (Bias Maju), Kemudian mencatat perubahan arus untuk setiap perubahan tegangan input dan kondisi Led!
+
+3.  Memvariasikan tegangan input dari 0 V sampai -5V untuk reverse (Bias Mundur), Kemudian mencatat perubahan arus untuk setiap perubahan tegangan input dan kondisi Led
+
+# HASIL & PEMBAHASAN
+
+## Data Percobaan dan Pengolahan Data Data percobaan A (Forward Bias)
+
++---------+-----------------------+---------------+-------------------+---------------+
+| **No.** | > **Sumber Tegangan** | **Voltmeter** | > **Amperemeter** | > **Kondisi** |
+|         |                       |               | >                 | >             |
+|         | **(V~in~)**           | **(V~out~)**  | > **(Ma)**        | > **Led**     |
++=========+=======================+===============+===================+===============+
+| > **1** | 0                     | 0             | > 0               | Mati          |
++---------+-----------------------+---------------+-------------------+---------------+
+| > **2** | 1                     | 1,02          | 0,0089            | > Redup       |
++---------+-----------------------+---------------+-------------------+---------------+
+| > **3** | 2                     | 1,67          | 0,0372            | > Redup       |
++---------+-----------------------+---------------+-------------------+---------------+
+| > **4** | 3                     | 2,36          | > 0,333           | > Terang      |
++---------+-----------------------+---------------+-------------------+---------------+
+| > **5** | 4                     | 2,7           | > 1,45            | > Terang      |
++---------+-----------------------+---------------+-------------------+---------------+
+| > **6** | 5                     | 3,1           | > 2,04            | > Terang      |
++---------+-----------------------+---------------+-------------------+---------------+
+
+## Data percobaan B (Revers Bias)
+
++----------+-----------------------+---------------+-----------------+---------------+
+| > **No** | > **Sumber Tegangan** | **Voltmeter** | **Amperemeter** | > **Kondisi** |
+|          |                       |               |                 | >             |
+|          | **(V~in~)**           | **(V~out~)**  | **(Μa)**        | > **Led**     |
++==========+=======================+===============+=================+===============+
+| **1**    | 0                     | 0             | 0               | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+| **2**    | -1                    | -1,15         | -1              | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+| **3**    | -2                    | -2,33         | -2              | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+| **4**    | -3                    | -3,44         | -3              | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+| **5**    | -4                    | -4,61         | -4              | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+| **6**    | -5                    | -5,72         | -5              | > mati        |
++----------+-----------------------+---------------+-----------------+---------------+
+
+> Resistor yang digunakan memilki hambatan sebesar 1000Ω
+
+## Pengolahan Data
+
+1.  Bias Maju (Forward Bias)
+
+- Menghitung tegangan dioda dengan rumus: V~D~ ~=~ V~in~ -- V~out~
+
++-----------------------------+-------------------------+
+| > **Tegangan Dioda (V~D~)** | > **Arus 6istrik (Ma)** |
++=============================+=========================+
+| 0                           | 0                       |
++-----------------------------+-------------------------+
+| 0,02                        | 0,0012                  |
++-----------------------------+-------------------------+
+| 0,33                        | 0,0219                  |
++-----------------------------+-------------------------+
+| 0,64                        | 0,315                   |
++-----------------------------+-------------------------+
+| 1,3                         | 1,23                    |
++-----------------------------+-------------------------+
+| 1,9                         | 2,25                    |
++-----------------------------+-------------------------+
+
+- Menghitung nilai rata-rata tegangan dioda dengan rumus:
+
+> 𝑉̅̅𝐷̅̅ = ∑ 𝑉𝐷
+>
+> 𝑛
+>
+> 𝑉̅̅𝐷̅̅ = 4,19 = 0,6983
+>
+> 6
+
+- Menghitung nilai kesalahan literatur: Xlit: 0,7 (berdasarkan dioda Ge)
+
+> 𝑉̅̅𝐷̅̅ − 𝑋𝑙𝑖𝑡
+>
+> 𝐾𝑙 = \|
+>
+> 𝐾𝑙 = \|
+>
+> 𝑋𝑙𝑖𝑡 \| × 100%
+
+0,6983 − 0,7
+
+> 0,7 \| × 100%
+>
+> 𝐾𝑙 = \|0,002381\| × 100%
+>
+> 𝐾𝑙 = 0,2381%
+>
+> Arus Listrik (mA)
+
+2.  Bias Mundur (Reverse Bias)
+
+    - Menghitung tegangan dioda dengan rumus: V~D~ ~=~ V~in~ -- V~out~
+
++----------------------+--------------------+
+| > **Tegangan Dioda** | > **Arus 7istrik** |
+|                      |                    |
+| **(V~D~)**           | **(Ma)**           |
++======================+====================+
+| 0                    | 0                  |
++----------------------+--------------------+
+| -0,15                | -1                 |
++----------------------+--------------------+
+| -0,33                | -2                 |
++----------------------+--------------------+
+| -0,44                | -3                 |
++----------------------+--------------------+
+| -0,61                | -4                 |
++----------------------+--------------------+
+| -0,72                | -5                 |
++----------------------+--------------------+
+
+- Menghitung nilai rata-rata tegangan dioda dengan rumus:
+
+> 𝑉̅̅𝐷̅̅ = ∑ 𝑉𝐷
+>
+> 𝑛
+>
+> 𝑉̅̅𝐷̅̅ = 2,25 = −0,375
+>
+> 6
+
+- Menghitung nilai kesalahan literatur: Xlit: -0,4 (berdasarkan dioda Ge)
+
+> 𝑉̅̅𝐷̅̅ − 𝑋𝑙𝑖𝑡
+>
+> 𝐾𝑙 = \|
+>
+> 𝐾𝑙 = \|
+>
+> 𝑋𝑙𝑖𝑡 \| × 100%
+
+−0,375 − (−0,4)
+
+> 0,4 \| × 100%
+>
+> 𝐾𝑙 = \|0,025\| × 100%
+>
+> 𝐾𝑙 = 2,5%
+>
+> Arus Listrik (mA)
+
+## Pembahasan
+
+> Dioda adalah perangkat elektronik yang berfungsi sebagai penyearah arus, mengalirkan arus dari anoda ke katoda dan menghambatnya dalam arah sebaliknya. Dalam rangkaian elektronik, dioda penting karena dapat menghantarkan arus saat diberi tegangan maju (forward bias) dan menghambat arus saat diberi tegangan mundur (reverse bias). Dioda dibuat dari kombinasi material tipe-n (mengandung elektron) dan tipe-p (mengandung lubang).
+>
+> Karakteristik dioda menggambarkan hubungan antara arus dioda (Id) dan tegangan dioda (Vd). Dalam kondisi bias maju, arus mulai mengalir ketika tegangan sumber cukup tinggi untuk mengatasi tegangan penghalang dalam dioda. Ketika tegangan dioda mencapai titik tertentu, arus meningkat dengan cepat.
+>
+> Untuk mengetahui karakteristik dioda, dioda dipasang seri dengan sumber daya DC
+>
+> dan sebuah resistor. Dengan variasi tegangan sumber, tegangan dan arus dioda dapat diukur. Dioda, yang merupakan komponen semikonduktor dengan dua elektroda (katoda dan anoda), hanya memperbolehkan arus mengalir dalam satu arah. Dioda dapat dibuat dari Germanium (Ge) atau Silikon (Si) dan digunakan dalam berbagai fungsi seperti penyearah, pengaman, pengatur tegangan, modulator, pengendali frekuensi, indikator, dan saklar.
+>
+> Pada kondisi bias maju, tegangan yang diterapkan di atas tegangan penghalang (biasanya 0,7V untuk dioda silikon) akan menyebabkan arus mengalir. Sedangkan dalam kondisi bias mundur, jika tegangan melebihi tegangan breakdown (biasanya 0,4V), dioda dapat rusak atau mengalami breakdown.
+>
+> Dalam praktikum ini, dilakukan dua percobaan: analisis bias maju dan bias mundur. Pada bias maju, kutub positif sumber dihubungkan ke sisi P dioda dan kutub negatif ke sisi
+>
+> N. Sebaliknya, pada bias mundur, kutub positif dihubungkan ke sisi N dan kutub negatif ke sisi P. Dioda mengalirkan arus dalam satu arah pada bias maju, sedangkan pada bias mundur arus yang mengalir sangat kecil sehingga dapat diabaikan.
+>
+> Pada percobaan karakteristik dioda, dilakukan pengukuran dengan variasi tegangan input dari -5V hingga 5V menggunakan resistor 1000Ω. Pada tegangan input 0V hingga 5V, dioda mengalami bias maju dan mulai mengalirkan arus setelah tegangan melebihi 0,6V. Sedangkan pada tegangan -1V hingga -5V, dioda mengalami bias mundur dan arus tetap sangat kecil.
+>
+> Hasil pengukuran menunjukkan bahwa arus dioda meningkat secara signifikan setelah tegangan input mengatasi tegangan penghalang. Ketidaktepatan dalam pengambilan dan pengolahan data dapat mempengaruhi hasil percobaan. Nilai rata-rata tegangan pada bias maju adalah sekitar 0,6983V dengan kesalahan literatur sebesar 0,2381%, sedangkan pada bias mundur nilai rata-rata adalah 0,375V dengan kesalahan literatur sebesar 6,25%.
+>
+> Secara keseluruhan, percobaan ini menunjukkan bahwa dioda hanya mengalirkan arus dalam satu arah dan memiliki karakteristik non-linear antara tegangan dan arus akibat tegangan penghalang. Praktikum ini bertujuan agar mahasiswa dapat memahami karakteristik dioda, menganalisis rangkaian bias maju dan mundur, serta menggambarkan grafik karakteristik dioda dengan benar.
+
+# KESIMPULAN
+
+> Dioda adalah salah satu komponen penting dalam rangkaian elektronik yang berfungsi
+>
+> sebagai penyearah arus listrik. Dioda dibuat dari bahan semikonduktor, biasanya silikon, yang didoping dengan unsur tertentu untuk membentuk semikonduktor tipe P dan N, yang digunakan sebagai anoda dan katoda.
+>
+> Fungsi utama dioda adalah untuk menghantarkan arus listrik dalam satu arah dan menghambat arus dari arah yang berlawanan. Hal ini menjadikan dioda sebagai komponen yang sangat penting dalam mengendalikan aliran arus listrik dalam rangkaian.
+>
+> Pada percobaan dengan sumber tegangan DC, forward bias terjadi ketika tegangan positif diberikan pada rangkaian. Dalam kondisi ini, arus listrik mengalir dari anoda menuju katoda, sesuai dengan arah panah pada simbol dioda.
+>
+> Reverse bias terjadi ketika tegangan input diubah menjadi negatif. Dalam kondisi ini, arus listrik mencoba mengalir dalam arah yang berlawanan, tetapi terhalang oleh katoda, yang ditandai dengan garis penghalang pada simbol dioda.
+>
+> Eksperimen menunjukkan bahwa dalam kondisi forward bias, dioda mulai menghantarkan arus setelah tegangan melebihi nilai potensial barrier atau knee voltage. Sebaliknya, dalam kondisi reverse bias, arus yang mengalir sangat kecil hingga tegangan breakdown tercapai.
+
+# REFERENSI
+
+> \[1.\] Lestari, Dewi. (2023, Maret 30). Diode.
+>
+> \[2.\] Irma Fadillah, Praktikum Elektronika dasar 1 Karakteristik Dioda, Laboratorium Pendidikan Fisikajurusan Pendidikan Matematika Dan Ilmu Pengetahuan Alamfakultas Keguruan Dan Ilmu Pendidikan Universitas Jambi .
+>
+> \[3.\] Hermawan Dwi Surjono, Ph.D., Elektronika Teori dan Penerapan, Penerbit Cerdas Ulet Kreatif Jl. Manggis72 RT 03/RW 04 Jember Lor -- Patrang.
+>
+> \[4.\] Surjono Dwi Herwan, Elektronika : Teori dan Penerapan. Jogjakarta. 2007.
+>
+> \[5.\] Vika Sari, Modul Elektronika dan Mekatronika Dioda Semikonduktor, Direktorat Pembinaan Sekolah Menengah Kejuruan Komplek Kementerian Pendidikan dan Kebudayaan, Gedung E, Lantai 13 Jalan Jenderal Sudirman, Senayan, Jakarta 10270 "DIODE ZENER TESTER 45V DENGAN RESOLUSI 0,05V." *Fmipa UM.*
+>
+> \[6.\] Wahyudi dan Priyambodo. (2023). *BUKU PANDUAN PRAKTIKUM ELEKTRONIKA*
+>
+> *DASAR.* Ciputat: PLT-UIN Syarif Hidayatullah Jakarta.
+
+# LAMPIRAN
+
++--------------------------------------------------------------------------------------------+
+| > ![](media/media/image13.jpeg){width="3.7565398075240597in" height="2.741665573053368in"} |
+| >                                                                                          |
+| > Rangkaian Forward Bias                                                                   |
++:===========================================================================================+
+| > ![](media/media/image14.jpeg){width="3.801484033245844in" height="2.645in"}              |
+| >                                                                                          |
+| > Rangkaian Reverse Bias                                                                   |
++--------------------------------------------------------------------------------------------+
